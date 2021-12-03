@@ -11,6 +11,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/another" do
-    "another backend".to_json
+    "testing second route".to_json
   end
 end
