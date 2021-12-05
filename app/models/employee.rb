@@ -1,4 +1,4 @@
 class Employee < ActiveRecord::Base
-  belongs_to :barbershop
-  has_many :customers
+  has_many :reviews
+  has_many :customers, through: :reviews
 end
