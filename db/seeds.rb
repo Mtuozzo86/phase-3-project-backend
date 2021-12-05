@@ -9,7 +9,7 @@ end
 
 Employee.create(name: "Jesse")
 Employee.create(name: "Joseph")
-Review.create(body: "Good job!", customer_id: customer.id, employee_id: employee.id)
+
 
 
 puts "✅ Done seeding!"
