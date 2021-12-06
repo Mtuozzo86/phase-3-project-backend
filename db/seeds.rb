@@ -9,6 +9,5 @@ end
 
 Employee.create(name: "Jesse")
 Employee.create(name: "Joseph")
-Barbershop.create(name: "Brother Cuts")
 
 puts "✅ Done seeding!"
