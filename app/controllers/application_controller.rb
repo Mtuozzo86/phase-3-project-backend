@@ -3,12 +3,11 @@ class ApplicationController < Sinatra::Base
 
   # Add your routes here
   get "/" do
-    list_of_customers = Customer.all
-    list_of_customers.to_json
+    Customer.all.to_json
   end
 
   get "/test" do
-    "test backend".to_json
+    "something".to_json
   end
 
   get "/another" do
