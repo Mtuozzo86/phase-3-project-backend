@@ -1,8 +1,4 @@
-
-
 class Customer < ActiveRecord::Base
-  belongs_to :employees
-  has_many :reviews, through: :employees
-
-
+  has_many :reviews
+  has_many :employees, through: :reviews
 end

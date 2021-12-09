@@ -3,13 +3,15 @@ require "faker"
 puts "🌱 Seeding spices..."
 
 # Seed your database here
-10.times do
+
+employee = Employee.create(name: "Jesse")
+employee2 = Employee.create(name: "Joe")
+
+3.times do
   Customer.create(name: Faker::Name.name)
 end
-
-Employee.create(name: "Jesse")
-Employee.create(name: "Joseph")
-
-
+3.times do
+  Customer.create(name: Faker::Name.name)
+end
 
 puts "✅ Done seeding!"

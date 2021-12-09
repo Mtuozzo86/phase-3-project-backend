@@ -2,15 +2,21 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
 
   # Add your routes here
-  get "/" do
+  get "/customers" do
     Customer.all.to_json
   end
 
-  get "/test" do
-    "something".to_json
+  get "/employees" do
+    employees = Employee.all
+    employees.to_json
   end
 
-  get "/another" do
-    "testing second route".to_json
+  post "/reviews" do
+    review = Review.create(body: params[:body], employee_id: params[:employee_id])
+    review.to_json
+  end
+
+  get "/reviews" do
+    Review.all.to_json
   end
 end
