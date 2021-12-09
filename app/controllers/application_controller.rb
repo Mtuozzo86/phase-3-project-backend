@@ -8,8 +8,10 @@ class ApplicationController < Sinatra::Base
 
   post "/new-review" do
     customer = Customer.create(name: params[:userName])
+
     
-    review = Review.create(body: params[:body])
+    customer.to_json
+    
   end
 
   get "/another" do
