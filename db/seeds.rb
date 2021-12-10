@@ -7,11 +7,11 @@ puts "🌱 Seeding spices..."
 employee = Employee.create(name: "Jesse")
 employee2 = Employee.create(name: "Joe")
 
-3.times do
-  Customer.create(name: Faker::Name.name)
-end
-3.times do
-  Customer.create(name: Faker::Name.name)
-end
+# 3.times do
+#   Customer.create(name: Faker::Name.name)
+# end
+# 3.times do
+#   Customer.create(name: Faker::Name.name)
+# end
 
 puts "✅ Done seeding!"
