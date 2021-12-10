@@ -1,4 +1,4 @@
-require 'pry'
+require "pry"
 
 class ApplicationController < Sinatra::Base
   set :default_content_type, "application/json"
@@ -12,15 +12,10 @@ class ApplicationController < Sinatra::Base
     employee = Employee.find(params[:id])
     employee.to_json(include: :reviews)
   end
-  
-
 
   post "/reviews" do
-
-    
-    review = Review.create(body: params[:body],  employee_id: params[:barberId])
+    review = Review.create(body: params[:body], employee_id: params[:employee_id])
     review.to_json
-    
   end
 
   get "/reviews" do
