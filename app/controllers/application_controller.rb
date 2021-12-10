@@ -8,14 +8,22 @@ class ApplicationController < Sinatra::Base
     Employee.all.to_json
   end
 
+  get "/customers" do
+    Customer.all.to_json
+  end
+
   get "/employees/:id" do
     employee = Employee.find(params[:id])
     employee.to_json(include: :reviews)
   end
 
   post "/reviews" do
-    review = Review.create(body: params[:body], employee_id: params[:employee_id])
+
+    user = Customer.create(name: params[:customer_id])
+    user.to_json
+    review = Review.create(body: params[:body], employee_id: params[:employee_id], customer_id: user.id)
     review.to_json
+    
   end
 
   get "/reviews" do
