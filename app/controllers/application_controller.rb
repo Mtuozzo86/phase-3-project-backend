@@ -19,11 +19,17 @@ class ApplicationController < Sinatra::Base
 
   post "/reviews" do
 
-    user = Customer.create(name: params[:customer_id])
+    user = Customer.create(name: params[:userName])
     user.to_json
-    review = Review.create(body: params[:body], employee_id: params[:employee_id], customer_id: user.id)
+    review = Review.create(body: params[:body], employee_id: params[:barber], customer_id: user.id)
     review.to_json
     
+  end
+
+  delete "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.destroy
+    review.to_json
   end
 
   get "/reviews" do
