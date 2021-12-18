@@ -20,7 +20,13 @@ class ApplicationController < Sinatra::Base
   post "/reviews" do
     user = Customer.create(name: params[:userName])
     user.to_json
-    review = Review.create(body: params[:body], employee_id: params[:barber], customer_id: user.id)
+    review = Review.create(customer_name: params[:userName], body: params[:body], employee_id: params[:barber], customer_id: user.id)
+    review.to_json
+  end
+
+  patch "/reviews/:id" do
+    review = Review.find(params[:id])
+    review.update(body: params[:body])
     review.to_json
   end
 

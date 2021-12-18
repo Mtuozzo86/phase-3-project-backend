@@ -1,0 +1,15 @@
+
+[1mFrom:[0m /home/mike/Development/code/Mod3/project/phase-3-project-backend/app/controllers/application_controller.rb:25 self.POST /reviews:
+
+    [1;34m20[0m:   post [31m[1;31m"[0m[31m/reviews[1;31m"[0m[31m[0m [32mdo[0m
+    [1;34m21[0m:     user = [1;34;4mCustomer[0m.create([35mname[0m: params[[33m:userName[0m])
+    [1;34m22[0m:     user.to_json
+    [1;34m23[0m:     review = [1;34;4mReview[0m.create([35mbody[0m: params[[33m:body[0m], [35memployee_id[0m: params[[33m:barber[0m], [35mcustomer_id[0m: user.id)
+    [1;34m24[0m:     review.to_json
+ => [1;34m25[0m:     binding.pry
+    [1;34m26[0m:   [32mend[0m
+    [1;34m27[0m: 
+    [1;34m28[0m:   get [31m[1;31m"[0m[31m/reviews/:id[1;31m"[0m[31m[0m [32mdo[0m
+    [1;34m29[0m:     review = [1;34;4mReview[0m.find(params[[33m:id[0m])
+    [1;34m30[0m:     review.to_json
+
